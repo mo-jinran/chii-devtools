@@ -1,12 +1,12 @@
 # chii-devtools
 
-BetterQQNT插件，使用Chii的DevTools进行远程调试  
+LiteLoaderQQNT插件，使用Chii的DevTools进行远程调试  
 
 
 ## 安装方法
 
-一般情况下无需安装，BetterQQNT会调用QQNT的DevTools  
-但目前还未找到QQNT 9.8.5版本打开自身DevTools方法
+一般情况下无需安装，LiteLoaderQQNT会调用QQNT的DevTools  
+但目前还未找到Windows QQNT 9.8.5版本打开自身DevTools方法
 
 安装之前请先确保已安装Node.js，能够使用npm工具
 
