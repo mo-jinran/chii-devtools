@@ -1,5 +1,5 @@
 {
-    "manifest_version": 2,
+    "manifest_version": 3,
     "type": "extension",
     "name": "Chii DevTools",
     "slug": "chii_devtools",
@@ -11,7 +11,7 @@
     },
     "repository": {
         "repo": "mo-jinran/chii-devtools",
-        "branch": "main",
+        "branch": "v3",
         "use_release": {
             "tag": "0.1.0",
             "name": "chii-devtools.zip"
