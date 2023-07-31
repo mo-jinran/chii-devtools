@@ -13,7 +13,7 @@
         "repo": "mo-jinran/chii-devtools",
         "branch": "main",
         "use_release": {
-            "tag": "latest",
+            "tag": "0.1.0",
             "name": "chii-devtools.zip"
         }
     },
