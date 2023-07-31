@@ -40,7 +40,7 @@ async function openDevTools(window) {
         const params = `?ws=localhost:${port}/client/betterQQNT?target=${target.id}`;
         const devtools_url = `http://localhost:${port}/front_end/chii_app.html${params}`;
         // 加载DevTools页面
-        const devtools_window = new BrowserWindow();
+        const devtools_window = new BrowserWindow({ autoHideMenuBar: true });
         devtools_window.loadURL(devtools_url);
         return;
     }
