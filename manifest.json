@@ -1,28 +1,32 @@
 {
-    "manifest_version": 3,
+    "manifest_version": 4,
     "type": "extension",
     "name": "Chii DevTools",
     "slug": "chii_devtools",
-    "description": "使用Chii的DevTools进行远程调试",
-    "version": "0.1.1",
-    "author": {
-        "name": "沫烬染",
-        "link": "https://github.com/mo-jinran"
-    },
-    "repository": {
-        "repo": "mo-jinran/chii-devtools",
-        "branch": "v3",
-        "use_release": {
-            "tag": "0.1.1",
-            "name": "chii-devtools.zip"
+    "description": "使用 Chii 进行远程调试",
+    "version": "1.0.0",
+    "authors": [
+        {
+            "name": "沫烬染",
+            "link": "https://github.com/mo-jinran"
         }
-    },
+    ],
     "platform": [
-        "win32"
+        "win32",
+        "linux",
+        "darwin"
     ],
     "injects": {
         "renderer": "./src/renderer.js",
         "main": "./src/main.js",
         "preload": "./src/preload.js"
+    },
+    "repository": {
+        "repo": "mo-jinran/chii-devtools",
+        "branch": "v4",
+        "release": {
+            "tag": "1.0.0",
+            "file": "chii-devtools.zip"
+        }
     }
 }

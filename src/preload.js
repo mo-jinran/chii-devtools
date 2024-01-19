@@ -3,10 +3,5 @@ const { contextBridge, ipcRenderer } = require("electron");
 
 
 contextBridge.exposeInMainWorld("chii_devtools", {
-    ready: async callback => {
-        const port = await ipcRenderer.invoke(
-            "betterQQNT.chii_devtools.ready"
-        );
-        callback(port);
-    }
+    ready: ipcRenderer.invoke("LiteLoader.chii_devtools.ready")
 });

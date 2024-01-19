@@ -14,16 +14,12 @@ const port = (() => {
 })();
 
 
-// 加载插件时触发
-function onLoad(plugin) {
-    // 启动chii服务器
-    chii.start({ port });
-    // 把端口传给渲染进程
-    ipcMain.handle(
-        "betterQQNT.chii_devtools.ready",
-        (event, message) => port
-    )
-}
+// 启动chii服务器
+chii.start({ port });
+
+
+// 把端口传给渲染进程
+ipcMain.handle("LiteLoader.chii_devtools.ready", () => port)
 
 
 // 打开DevTools
@@ -37,27 +33,31 @@ async function openDevTools(window) {
             continue;
         }
         // DevTools URL
-        const params = `?ws=localhost:${port}/client/betterQQNT?target=${target.id}`;
+        const params = `?ws=localhost:${port}/client/LiteLoader?target=${target.id}`;
         const devtools_url = `http://localhost:${port}/front_end/chii_app.html${params}`;
         // 加载DevTools页面
         const devtools_window = new BrowserWindow({ autoHideMenuBar: true });
         devtools_window.loadURL(devtools_url);
-        return;
+        return devtools_window;
     }
 }
 
 
 // 创建窗口时触发
-function onBrowserWindowCreated(window, plugin) {
-    window.webContents.on("before-input-event", (event, input) => {
+exports.onBrowserWindowCreated = (window) => {
+    let devtools_window = null;
+    window.webContents.on("before-input-event", async (event, input) => {
         if (input.key == "F12" && input.type == "keyUp") {
-            openDevTools(window);
+            if (devtools_window) {
+                devtools_window.close();
+                devtools_window = null;
+            }
+            else {
+                devtools_window = await openDevTools(window);
+                devtools_window.on("closed", () => {
+                    devtools_window = null;
+                });
+            }
         }
     });
-}
-
-
-module.exports = {
-    onLoad,
-    onBrowserWindowCreated
 }
