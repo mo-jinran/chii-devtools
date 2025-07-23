@@ -46,7 +46,9 @@ async function openDevTools(window) {
 exports.onBrowserWindowCreated = (window) => {
     let devtools_window = null;
     window.webContents.on("before-input-event", async (event, input) => {
-        if (input.key == "F12" && input.type == "keyUp") {
+        if ((input.key == "F12" || (
+            input.key == "I" && (process.platform === "darwin" ? input.meta : input.control) && input.shift)
+        ) && input.type == "keyUp") {
             if (devtools_window) {
                 devtools_window.close();
                 devtools_window = null;
