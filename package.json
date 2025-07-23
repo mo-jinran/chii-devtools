@@ -4,9 +4,9 @@
         "postinstall": "patch-package"
     },
     "dependencies": {
-        "chii": "^1.14.0"
+        "chii": "1.14.0"
     },
     "devDependencies": {
-        "patch-package": "^8.0.0"
+        "patch-package": "8.0.0"
     }
 }
