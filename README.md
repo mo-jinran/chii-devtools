@@ -15,4 +15,4 @@ LiteLoaderQQNT 插件，使用 Chii 进行远程调试
 安装之前请先确保已安装 `Node.js`，能够使用 `npm` 工具
 
 - 克隆/下载本项目，并将其放到插件目录下
-- 进入本插件的目录内，执行命令 `npm install chii --save`
+- 进入本插件的目录内，执行命令 `npm install`
