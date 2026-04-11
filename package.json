@@ -1,7 +1,7 @@
 {
     "scripts": {
         "patch": "npx patch-package chii",
-        "postinstall": "patch-package"
+        "postinstall": "patch-package && node scripts/postinstall.js"
     },
     "dependencies": {
         "chii": "1.15.4"
