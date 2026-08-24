@@ -1,4 +1,7 @@
 {
+    "name": "chii-devtools",
+    "version": "1.0.3",
+    "private": true,
     "scripts": {
         "patch": "npx patch-package chii",
         "postinstall": "patch-package"
